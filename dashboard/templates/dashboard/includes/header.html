@@ -1,0 +1,168 @@
+{% load static %}
+
+<div class="header header-style-4" id="header">
+    <div class="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-3">
+                    <div class="welcome-text">
+                        <p>Welcome to Oitila</p>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 d-xl-flex d-lg-flex d-block align-items-center">
+                    <div class="part-right">
+                        <ul>
+                            <li>
+                                <span class="simple-text">Sever Time : </span>
+                                <div class="server-time">
+                                    <div class="single-time clock-time">
+                                        <span class="icon">
+                                            <i class="far fa-clock"></i>
+                                        </span>
+                                        <span class="text">
+                                            <span id="hours"></span>
+                                            <span id="minutes"></span>
+                                            <span id="seconds"></span>
+                                        </span>
+                                    </div>
+                                    <div class="single-time">
+                                        <span class="icon">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </span>
+                                        <span class="text">
+                                            <span id="date"></span>
+                                            <span id="month"></span>
+                                            <span id="year"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="user-panel">
+                                    <span>
+                                        <a href="#" class="login-btn">Login</a>or</span><a href="#" class="register-btn">Register</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bottom">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-xl-3 col-lg-2 d-xl-flex d-lg-flex d-block align-items-center">
+                    <div class="row">
+                        <div class="col-4 d-xl-none d-lg-none d-block">
+                            <button class="navbar-toggler" type="button">
+                                <span class="dag"></span>
+                                <span class="dag2"></span>
+                                <span class="dag3"></span>
+                            </button>    
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-8 d-xl-block d-lg-block d-flex align-items-center justify-content-end">
+                            <div class="logo">
+                                <!-- Company logo-->
+                                <a href="{% url 'dashboard' %}">
+                                    <img src="{% static 'assets/img/logo2.png'%}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-10">
+                    <div class="mainmenu">
+                        <div class="d-xl-none d-lg-none d-block">
+                            <div class="user-profile">
+                                <div class="part-img">
+                                    <img src="{% static 'assets/img/member-1.jpg'%}" alt="">
+                                </div>
+                                <div class="user-info">
+                                    <span class="user-name">Sadwel Eunton</span>
+                                    <span class="user-balance">Bal : $202.25</span>
+                                </div>
+                                <div class="log-out-area">
+                                    <a href="#">Log out</a>
+                                </div>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-expand-lg">              
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto">
+                                    {% comment %} <li class="nav-item dropdown show">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" id="homeDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Home
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="homeDropdown">
+                                            <a class="dropdown-item" href="index.html">Homepage 01</a>
+                                            <a class="dropdown-item" href="index-2.html">Homepage 02</a>
+                                            <a class="dropdown-item" href="index-3.html">Homepage 03</a>
+                                            <a class="dropdown-item" href="index-4.html">Homepage 04</a>
+                                            <a class="dropdown-item" href="index-5.html">Homepage 05</a>
+                                        </div>
+                                    </li> {% endcomment %}
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="about.html">about us<span class="sr-only">(current)</span></a>
+                                    </li>
+
+                                    <li class="nav-item dropdown show">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" id="db-Dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            dashboard
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="db-Dropdown">
+                                            <a class="dropdown-item" href="{% url 'dashboard' %}">My account</a>
+                                            <a class="dropdown-item" href="{% url 'investment' %}">Investment</a>
+                                            <a class="dropdown-item" href="{% url 'withdraw' %}">Withdraw</a>
+                                            <a class="dropdown-item" href="{% url 'history' %}">History</a>
+                                            <a class="dropdown-item" href="{% url 'referral' %}">Referrals</a>
+                                            <a class="dropdown-item" href="{% url 'all_settings' %}">Settings</a>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-item dropdown show">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" id="pagesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            pages
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                                            <a class="dropdown-item" href="affiliate.html">Affiliate</a>
+                                            <a class="dropdown-item" href="faq.html">Faq</a>
+                                            <a class="dropdown-item" href="error.html">Error</a>
+                                            <a class="dropdown-item" href="privacy-policy.html">privacy & policy</a>
+                                            <a class="dropdown-item" href="transaction.html">transaction</a>
+                                            <a class="dropdown-item" href="login.html">Login</a>
+                                            <a class="dropdown-item" href="register.html">Register</a>
+                                        </div>
+                                    </li>
+
+                                    {% comment %} <li class="nav-item dropdown show">
+                                        <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Blog
+                                          </a>
+                                        <div class="dropdown-menu" aria-labelledby="blogDropdown">
+                                            <a class="dropdown-item" href="blog-1.html">Blog 01</a>
+                                            <a class="dropdown-item" href="blog-2.html">Blog 02</a>
+                                            <a class="dropdown-item" href="blog-3.html">Blog 03</a>
+                                            <a class="dropdown-item" href="blog-4.html">Blog 04</a>
+                                            <a class="dropdown-item" href="blog-details.html">Blog details 1</a>
+                                            <a class="dropdown-item" href="blog-details-2.html">Blog details 2</a>
+                                        </div>
+                                    </li> {% endcomment %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="contact.html">contact</a>
+                                    </li>
+                                    <li class="nav-item join-now-btn">
+                                        <a class="nav-link" href="#">Join Now</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

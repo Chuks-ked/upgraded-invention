@@ -1,0 +1,149 @@
+{% extends 'dashboard/base/base.html' %}
+{% load static %}
+
+{% block title %}HISTORY{% endblock %}   
+
+{% block body %} 
+
+    <!-- breadcrumb begin -->
+    <div class="breadcrumb-oitila db-breadcrumb">
+        <div class="container">
+            <div class="row justify-content-lg-around">
+                <div class="col-xl-6 col-lg-7 col-md-5 col-sm-6 col-8">
+                    <div class="part-txt">
+                        <h1>User Dashboard</h1>
+                        <ul>
+                            <li>home</li>
+                            <li>History</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-5 col-md-7 col-sm-6 col-4 d-flex align-items-center">
+                    <div class="db-user-profile">
+                        <div class="part-data">
+                            <span class="name">Sadwel Eunton</span>
+                            <ul>
+                                <li>
+                                    <span class="text">Invest</span>
+                                    <span class="number">$100</span>
+                                </li>
+                                <li>
+                                    <span class="text">Earings</span>
+                                    <span class="number">$250</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="part-img">
+                            <img src="{% static 'assets/img/member-1.jpg'%}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb end -->
+
+    <!-- account begin -->
+    <div class="user-dashboard">
+        <div class="container">
+
+            {% include 'dashboard/includes/account.html' %}
+
+            <h3 class="title">
+                Watch Extreme Recent Transaction
+            </h3>
+            <div class="history-search-filter">
+                <div class="date-select from-date">
+                    <input class="form-control theme_cal_Selected" placeholder="Select Start Date" required data-hint="Please choose a Delivery date" tabindex="20" name="reqDeliveryDate" id="reqDeliveryDate"  type="text"  data-role="datebox" data-options='{"mode": "calbox", "overrideDateFormat": "%A, %B %-d, %Y", "useClearButton": true, "useCancelButton": true,"popupPosition": "window", "useFocus": true, "calUsePickers":"true", "useInlineBlind":true, "themeDate": "info", "themeDatePick": "danger","useCollapsedBut":true}'>
+                </div>
+                <div class="date-select to-date">
+                    <input class="form-control theme_cal_Selected" placeholder="Select End Date" required data-hint="Please choose a Delivery date" tabindex="20" name="reqDeliveryDate" id="reqDeliveryDate2"  type="text"  data-role="datebox" data-options='{"mode": "calbox", "overrideDateFormat": "%A, %B %-d, %Y", "useClearButton": true, "useCancelButton": true,"popupPosition": "window", "useFocus": true, "calUsePickers":"true", "useInlineBlind":true, "themeDate": "info", "themeDatePick": "danger","useCollapsedBut":true}'>
+                </div>
+                <div class="payment-process">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="payment-process" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Payment Method
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="payment-process">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="transaction-process">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="transaction-process" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Transaction Category
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="transaction-process">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-btn">
+                    <button class="btn-hyipox-2">Search</button>
+                </div>
+            </div>
+            
+            <div class="transactions-table">
+                <div class="table-responsive">
+                    <table id="example" class="display misco-data-table" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>BetID</th>
+                                <th>Game</th>
+                                <th>Coin</th>
+                                <th>Bet</th>
+                                <th>Time</th>
+                                <th>Profit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>System Architect</td>
+                                <td>Edinburgh</td>
+                                <td>61</td>
+                                <td>2011/04/25</td>
+                                <td>$320,800</td>
+                            </tr>
+                            <tr>
+                                <td>Garrett Winters</td>
+                                <td>Accountant</td>
+                                <td>Tokyo</td>
+                                <td>63</td>
+                                <td>2011/07/25</td>
+                                <td>$170,750</td>
+                            </tr>
+                            <tr>
+                                <td>Ashton Cox</td>
+                                <td>Junior Technical Author</td>
+                                <td>San Francisco</td>
+                                <td>66</td>
+                                <td>2009/01/12</td>
+                                <td>$86,000</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Office</th>
+                                <th>Age</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- account end -->
+
+
+{% endblock %}
