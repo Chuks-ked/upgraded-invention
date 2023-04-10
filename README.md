@@ -1,1 +1,1 @@
-# upgraded-investment
+# an investment platform prototype
