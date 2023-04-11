@@ -1,9 +1,12 @@
 from django.contrib import admin
 from django.core.mail import send_mail
 from django.conf import settings
-from .models import InvestmentDeposit, Withdrawal
+from .models import *
 
 # Register your models here.
+class InvestmentPlanAdmin(admin.ModelAdmin):
+    list_display = ('name','minimum_deposit', 'maximum_deposit', 'interest_rate', 'duration')
+admin.site.register(InvestmentPlan, InvestmentPlanAdmin)
 
 class InvestmentDepositAdmin(admin.ModelAdmin):
     list_display = ('user', 'amount', 'status', 'date')

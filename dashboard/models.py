@@ -7,13 +7,22 @@ from django.utils.crypto import get_random_string
 
 # Create your models here.
 
+class InvestmentPlan(models.Model):
+    name = models.CharField(max_length=100)
+    minimum_deposit = models.DecimalField(max_digits=10, decimal_places=2)
+    maximum_deposit = models.DecimalField(max_digits=10, decimal_places=2)
+    interest_rate = models.DecimalField(max_digits=5, decimal_places=2)
+    duration = models.IntegerField()
+
+    def __str__(self):
+        return self.name
 
 class InvestmentDeposit(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    plan = models.ForeignKey(InvestmentPlan, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     status = models.CharField(max_length=10, choices=(('pending', 'Pending'), ('received', 'Received')), default='pending')
     date = models.DateTimeField(auto_now_add=True)
-
 
 
 class Withdrawal(models.Model):

@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
-from .models import InvestmentDeposit
+from .models import *
+
 
 # Create your views here.
 
@@ -9,7 +10,10 @@ def dashboard(request):
     return render(request, 'dashboard/dashboard.html')
 
 def investment(request):
-    return render(request, 'dashboard/investment.html')
+    plans = InvestmentPlan.objects.all()
+    return render(request, 'dashboard/investment.html',{
+        'plan': plans,
+    })
 
 def deposit(request):
     if request.method == 'POST':
