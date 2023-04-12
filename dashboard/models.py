@@ -24,6 +24,11 @@ class InvestmentDeposit(models.Model):
     status = models.CharField(max_length=10, choices=(('pending', 'Pending'), ('received', 'Received')), default='pending')
     date = models.DateTimeField(auto_now_add=True)
 
+    # @property
+    # def get_total(self):
+    #     total = self.product.price * self.quantity
+    #     return total
+
 
 class Withdrawal(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
